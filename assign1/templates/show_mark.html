@@ -1,0 +1,27 @@
+<table border = '2'>
+<tr>
+<th>M1</th>
+<th>M2</th>
+<th>M3</th>
+<th>M4</th>
+<th>M5</th>
+<th>Update</th>
+<th>Delete</th>
+</tr>
+{% for m in mar %}
+<h2>{{m.student_num_id}}</h2>
+<tr>
+<td>{{m.M1}}</td>
+<td>{{m.M2}}</td>
+<td>{{m.M3}}</td>
+<td>{{m.M4}}</td>
+<td>{{m.M5}}</td>
+<td><button><a href = 'http://127.0.0.1:8000/student/update_mark/{{m.id}}'>update</a></button></td>
+<td><button><a href = 'http://127.0.0.1:8000/student/delete_mark/{{m.id}}'>delete</a></button></td>
+
+</tr>
+{% endfor %}
+
+</table>
+<br>
+<button><a href = 'http://127.0.0.1:8000/student/'>back</a></button>

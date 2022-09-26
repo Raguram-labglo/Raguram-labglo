@@ -1,0 +1,62 @@
+<center>
+<h1>Student Details</h1>
+<table border = '1'>
+<tr>
+<th>id</th>
+<th>Roll_no</th>
+<th>Name</th>
+<th>Profile</th>
+<th>Mark</th>
+<th>Update</th>
+<th>Delete</th>
+
+</tr>
+{% for i in stu %}
+<tr>
+<td>{{i.id}}</td>
+<td>{{i.roll_no}}</td>
+<td>{{i.name}}</td>
+<td><img src="{{ i.profile.url }}", width = 100px ></td>
+<td><button><a href = show_mark/{{i.id}}>marks</a></button></td>
+<td><button><a href = update_stu/{{i.id}}>update</a></button></td>
+<td><button><a href = del_stu/{{i.id}}>delete</a></button></td>
+</tr>
+{% endfor %}
+</table>
+
+
+
+
+<br>
+<h1>Students Mark</h1>
+<table border = '1'>
+<tr>
+<th>id</th>
+<th>M1</th>
+<th>M2</th>
+<th>M3</th>
+<th>M4</th>
+<th>M5</th>
+<th>Update</th>
+<th>Delete</th>
+
+</tr>
+{% for m in mar %}
+<tr>
+<td>{{m.student_num_id}}</td>
+<td>{{m.M1}}</td>
+<td>{{m.M2}}</td>
+<td>{{m.M3}}</td>
+<td>{{m.M4}}</td>
+<td>{{m.M5}}</td>
+<td><a href = 'http://127.0.0.1:8000/student/update_mark/{{m.id}}'><button>update</button></a></td>
+<td><a href = 'http://127.0.0.1:8000/student/delete_mark/{{m.id}}'><button>delete</button></a></td>
+
+</tr>
+{% endfor %}
+
+</table>
+<br>
+<button><a href = http://127.0.0.1:8000/student/students>add student</a></button>
+<button><a href = http://127.0.0.1:8000/student/marks>add marks</a></button>
+</center>
